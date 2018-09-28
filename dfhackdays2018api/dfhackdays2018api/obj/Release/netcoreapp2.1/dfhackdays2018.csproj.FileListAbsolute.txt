@@ -1,0 +1,13 @@
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/bin/Release/netcoreapp2.1/dfhackdays2018.deps.json
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/bin/Release/netcoreapp2.1/dfhackdays2018.runtimeconfig.json
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/bin/Release/netcoreapp2.1/dfhackdays2018.runtimeconfig.dev.json
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/bin/Release/netcoreapp2.1/dfhackdays2018.dll
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/bin/Release/netcoreapp2.1/dfhackdays2018.pdb
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/obj/Release/netcoreapp2.1/dfhackdays2018.csproj.CoreCompileInputs.cache
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/obj/Release/netcoreapp2.1/dfhackdays2018.RazorAssemblyInfo.cache
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/obj/Release/netcoreapp2.1/dfhackdays2018.RazorAssemblyInfo.cs
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/obj/Release/netcoreapp2.1/dfhackdays2018.AssemblyInfoInputs.cache
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/obj/Release/netcoreapp2.1/dfhackdays2018.AssemblyInfo.cs
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/obj/Release/netcoreapp2.1/dfhackdays2018.RazorTargetAssemblyInfo.cache
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/obj/Release/netcoreapp2.1/dfhackdays2018.dll
+/Users/rfeng/Projects/dfhackdays2018/dfhackdays2018/obj/Release/netcoreapp2.1/dfhackdays2018.pdb

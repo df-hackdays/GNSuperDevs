@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{8432D68C-7F72-4370-A91B-15C3ABC0143E}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dfhackdays2018api/Controllers/StudentsController.cs">
+    <Files>
+      <File FileName="dfhackdays2018api/Controllers/StudentsController.cs" Line="21" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.dfhackdays2018api PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

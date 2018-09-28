@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{84842E59-52DC-4D78-8F4A-C174E118A7FB}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dfhackdays2018/Startup.cs">
+    <Files>
+      <File FileName="dfhackdays2018/Models/MongoDbContext.cs" Line="19" Column="31" />
+      <File FileName="dfhackdays2018/Controllers/StudentsController.cs" Line="7" Column="20" />
+      <File FileName="dfhackdays2018/Models/Student.cs" Line="16" Column="33" />
+      <File FileName="dfhackdays2018/Models/Lesson.cs" Line="13" Column="1" />
+      <File FileName="dfhackdays2018/Models/LessonPlan.cs" Line="14" Column="17" />
+      <File FileName="dfhackdays2018/Program.cs" Line="21" Column="47" />
+      <File FileName="dfhackdays2018/Startup.cs" Line="69" Column="15" />
+      <File FileName="dfhackdays2018/Models/Tag.cs" Line="11" Column="10" />
+      <File FileName="dfhackdays2018/Models/Interest.cs" Line="10" Column="41" />
+      <File FileName="dfhackdays2018/appsettings.json" Line="7" Column="22" />
+      <File FileName="dfhackdays2018/appsettings.Development.json" Line="9" Column="22" />
+      <File FileName="dfhackdays2018/Properties/launchSettings.json" Line="21" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.ItemProperties.dfhackdays2018 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
