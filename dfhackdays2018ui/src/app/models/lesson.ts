@@ -1,7 +1,9 @@
-export interface Lesson {
-    lessonId: string;
-    title: string;
-    description: string;
-    difficulty: string;
-    content: string;
+export class Lesson {
+
+    constructor(
+        public lessonId: string,
+        public title: string,
+        public description: string,
+        public difficulty: string,
+        public content: string) {}
 }

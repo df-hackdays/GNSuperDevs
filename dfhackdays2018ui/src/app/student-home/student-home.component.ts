@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentsService } from '../services/students.service';
 import { Student } from '../models/student';
+import { LessonsService } from '../services/lessons.service';
+import { Lesson } from '../models/lesson';
 
 @Component({
   selector: 'app-student-home',
@@ -9,8 +11,12 @@ import { Student } from '../models/student';
 })
 export class StudentHomeComponent implements OnInit {
   public currentStudent = new Student('', '', '', '', null, '', '', [], null);
+  public recommendedLessons = Array.of<Lesson>();
 
-  constructor(private studentsService: StudentsService) { }
+  constructor(
+    private studentsService: StudentsService,
+    private lessonsService: LessonsService
+    ) { }
 
   ngOnInit() {
     if (!localStorage.getItem('studentId')) {
@@ -20,6 +26,10 @@ export class StudentHomeComponent implements OnInit {
     this.studentsService
       .getStudent(localStorage.getItem('studentId'))
       .subscribe(stu => this.currentStudent = stu);
+
+    this.lessonsService
+      .getRecommendedLessons(localStorage.getItem('studentId'), 3)
+      .subscribe(l => this.recommendedLessons = l);
   }
 
 }

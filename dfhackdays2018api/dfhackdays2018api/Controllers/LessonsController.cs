@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using dfhackdays2018.Models;
+using dfhackdays2018api.Models;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 
@@ -15,11 +16,20 @@ namespace dfhackdays2018api.Controllers
     {
         // GET: api/values
         [HttpGet]
-        public IEnumerable<Lesson> Get()
+        public IEnumerable<Lesson> Get(string studentId, bool recommendedOnly, int limit)
         {
             using (MongoDbContext context = new MongoDbContext())
             {
-                return context.Lessons.ToList();
+                if (studentId != null && recommendedOnly)
+                {
+                    Student student = context.Students.SingleOrDefault(s => s.StudentId == ObjectId.Parse(studentId));
+                    Profession profession = context.Professions.SingleOrDefault(p => p.ProfessionId == student.Profession);
+                    return context.Lessons.Where(l => l.Tags.Select(t => t.Name).Intersect(profession.Tags.Select(t => t.Name)).Any()).OrderBy(l => l.Difficulty).Take(limit).ToList();
+                }
+                else
+                {
+                    return context.Lessons.ToList();
+                }
             }
         }
 

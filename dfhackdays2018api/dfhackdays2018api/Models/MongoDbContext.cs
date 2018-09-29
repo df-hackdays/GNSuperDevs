@@ -1,5 +1,6 @@
 ﻿using System;
 using Blueshift.EntityFrameworkCore.MongoDB.Annotations;
+using dfhackdays2018api.Models;
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 

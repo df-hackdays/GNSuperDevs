@@ -9,12 +9,12 @@ import { StudentsService } from './services/students.service';
 })
 export class AppComponent implements OnInit {
   title = 'dfhackdays2018ui';
-  public student: Student;
+  // public student: Student;
 
   constructor(private studentsService: StudentsService) {
   }
 
   ngOnInit() {
-    this.studentsService.getStudent('5bae7dd6b9c86c5461b48943').subscribe(stud => this.student = stud);
+    // this.studentsService.getStudent('5bae7dd6b9c86c5461b48943').subscribe(stud => this.student = stud);
   }
 }

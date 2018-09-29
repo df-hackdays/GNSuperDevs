@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -13,5 +14,6 @@ namespace dfhackdays2018.Models
         [BsonId]
         public ObjectId ProfessionId { get; set; }
         public string Name { get; set; }
+        public List<Tag> Tags { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using dfhackdays2018.Models;
+using dfhackdays2018api.Models;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 
@@ -17,6 +18,7 @@ namespace dfhackdays2018api.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            /*
             using (MongoDbContext context = new MongoDbContext())
             {
                 Profession profession = new Profession()
@@ -40,14 +42,25 @@ namespace dfhackdays2018api.Controllers
                 };
                 context.Students.Add(student);
                 context.SaveChanges();
-            }
+            }*/
 
+            using (MongoDbContext context = new MongoDbContext())
+            {
+                Profession profession = new Profession()
+                {
+                    Name = "Accountant",
+                    Tags = new List<Tag>() { new Tag() { Name = "accounting" } }
+                };
+
+                context.Professions.Add(profession);
+                context.SaveChanges();
+            }
+            
             List<Lesson> lessons = new List<Lesson>() {
-                new Lesson() { Title = "CCNA", Description = "CCNA", Difficulty = "Low" },
-                new Lesson() { Title = "CCNP 1", Description = "CCNP 1", Difficulty = "Intermediate" },
-                new Lesson() { Title = "CCNP 2", Description = "CCNP 2", Difficulty = "Intermediate" },
-                new Lesson() { Title = "CCNP 3", Description = "CCNP 3", Difficulty = "Intermediate" },
-                new Lesson() { Title = "CCIE 1", Description = "CCIE 1", Difficulty = "Advanced" }
+                new Lesson() { Title = "Coding Fundamentals 1 for Accountants", Description = "Apply problem solving skills you have already developed in being an accountant, and leverage this in building fundamental skills for coding", Difficulty = Difficulty.Low, Tags = new List<Tag>() { new Tag() { Name = "accounting" } } },
+                new Lesson() { Title = "Accounting Automation Fundamentals 1", Description = "Use ready-built programming tools to perform basic accounting tasks 1", Difficulty = Difficulty.Intermediate, Tags = new List<Tag>() { new Tag() { Name = "accounting" } } },
+                new Lesson() { Title = "Accounting Automation Fundamentals 2", Description = "Use ready-built programming tools to perform basic accounting tasks 2", Difficulty = Difficulty.Intermediate, Tags = new List<Tag>() { new Tag() { Name = "accounting" } } },
+                new Lesson() { Title = "Accounting Automation Fundamentals 3", Description = "Use ready-built programming tools to perform basic accounting tasks 3", Difficulty = Difficulty.Intermediate, Tags = new List<Tag>() { new Tag() { Name = "accounting" } } },
             };
 
             foreach (Lesson lesson in lessons)
@@ -60,11 +73,14 @@ namespace dfhackdays2018api.Controllers
                     
             }
 
+
+
+            /*
             using (MongoDbContext context = new MongoDbContext())
             {
                 context.LessonPlans.Add(new LessonPlan() { Title = "Road to CCIE", Difficulty = "Advanced", Lessons = new List<ObjectId>() { context.Lessons.SingleOrDefault(less => less.Title == "CCNA").LessonId, context.Lessons.SingleOrDefault(less => less.Title == "CCNP 1").LessonId, context.Lessons.SingleOrDefault(less => less.Title == "CCNP 2").LessonId, context.Lessons.SingleOrDefault(less => less.Title == "CCNP 3").LessonId, context.Lessons.SingleOrDefault(less => less.Title == "CCIE 1").LessonId } });
                 context.SaveChanges();
-            }
+            }*/
 
             return new string[] { "value1", "value2" };
         }
