@@ -18,6 +18,7 @@ namespace dfhackdays2018.Models
         public string Email { get; set; }
         public DateTime Birthday { get; set; }
         public string Gender { get; set; }
-        public List<Interest> Interests { get; set; }
+        public Profession Profession { get; set; }
+        public List<Profession> Aspirations { get; set; }
     }
 }

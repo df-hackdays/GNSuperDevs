@@ -9,8 +9,9 @@ namespace dfhackdays2018.Models
     public class MongoDbContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
-        public DbSet<Lesson> Lesson { get; set; }
+        public DbSet<Lesson> Lessons { get; set; }
         public DbSet<LessonPlan> LessonPlans { get; set; }
+        public DbSet<Profession> Professions { get; set; }
 
         public MongoDbContext() : this(new DbContextOptions<MongoDbContext>())
         {
