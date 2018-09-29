@@ -1,21 +1,17 @@
 ﻿<Properties StartupConfiguration="{8432D68C-7F72-4370-A91B-15C3ABC0143E}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="dfhackdays2018api/Controllers/LessonPlansController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dfhackdays2018api/Models/Student.cs">
     <Files>
-      <File FileName="dfhackdays2018api/Controllers/StudentsController.cs" Line="65" Column="31" />
-      <File FileName="dfhackdays2018api/Controllers/ProfessionsController.cs" Line="23" Column="27" />
-      <File FileName="dfhackdays2018api/Models/MongoDbContext.cs" Line="9" Column="43" />
-      <File FileName="dfhackdays2018api/Models/Profession.cs" Line="14" Column="19" />
-      <File FileName="dfhackdays2018api/Models/Tag.cs" Line="1" Column="1" />
-      <File FileName="dfhackdays2018api/Models/Student.cs" Line="18" Column="42" />
-      <File FileName="dfhackdays2018api/Models/Lesson.cs" Line="9" Column="6" />
-      <File FileName="dfhackdays2018api/Models/LessonPlan.cs" Line="16" Column="47" />
-      <File FileName="dfhackdays2018api/Controllers/LessonsController.cs" Line="32" Column="43" />
-      <File FileName="dfhackdays2018api/Controllers/LessonPlansController.cs" Line="14" Column="27" />
+      <File FileName="dfhackdays2018api/Controllers/StudentsController.cs" Line="76" Column="32" />
+      <File FileName="dfhackdays2018api/Models/StudentViewModel.cs" Line="9" Column="16" />
+      <File FileName="dfhackdays2018api/Models/Student.cs" Line="23" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/Controllers/StudentsController.cs" relfile="dfhackdays2018api/Controllers/StudentsController.cs" line="76" column="1" />
+      <Breakpoint file="/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/Controllers/StudentsController.cs" relfile="dfhackdays2018api/Controllers/StudentsController.cs" line="82" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using dfhackdays2018.Models;
+using dfhackdays2018api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -49,9 +51,10 @@ namespace dfhackdays2018
                 opt.Filters.Add(new CorsAuthorizationFilterFactory("Cors-AllowAll"));
             });
 
-
-            services.AddDbContext<MongoDbContext>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //services.AddAutoMapper(typeof(AutoMapperProfile));
+            //Mapper.AssertConfigurationIsValid();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

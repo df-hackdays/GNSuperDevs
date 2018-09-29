@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Student } from './models/student';
-import { Interest } from './models/interest';
 import { StudentsService } from './services/students.service';
 
 @Component({

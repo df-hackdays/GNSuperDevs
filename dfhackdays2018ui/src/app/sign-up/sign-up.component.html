@@ -1,0 +1,93 @@
+<div class="container">
+    <div [hidden]="submitted">
+      <h1>New Student Sign-up</h1>
+      <p>We are happy you decided to take charge of your career! We have some questions for you to make your experience in using our service the best it can be.</p>
+      <form (ngSubmit)="onSubmit()" #signUpForm="ngForm">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" required [(ngModel)]="newStudent.firstName" name="firstName" #firstName="ngModel">
+          <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+            First name is required
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" required [(ngModel)]="newStudent.lastName" name="lastName" #lastName="ngModel">
+          <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
+            Last name is required
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" required [(ngModel)]="newStudent.email" name="email" #email="ngModel">
+          <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+            Email is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <input type="text" class="form-control" id="birthday" required [(ngModel)]="newStudent.birthday" name="birthday" #birthday="ngModel">
+          <div [hidden]="birthday.valid || birthday.pristine" class="alert alert-danger">
+            Birthday is required
+          </div>
+        </div>
+        <!--
+        <div class="form-group">
+          <label for="alterEgo">Alter Ego</label>
+          <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo">
+        </div>
+   
+        -->
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select class="form-control" id="gender" required [(ngModel)]="newStudent.gender" name="gender" #gender="ngModel">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+          </select>
+          <div [hidden]="gender.valid || gender.pristine" class="alert alert-danger">
+            Gender is required
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="profession">Profession</label>
+          <select class="form-control" id="profession" required [(ngModel)]="newStudent.profession" name="profession" #profession="ngModel">
+            <option *ngFor="let prof of professions" [value]="prof.professionId">{{ prof.name }}</option>
+          </select>
+          <div [hidden]="profession.valid || profession.pristine" class="alert alert-danger">
+            Profession is required
+          </div>
+        </div>
+   
+        <button type="submit" class="btn btn-success" [disabled]="!signUpForm.form.valid">Submit</button>
+        <!--
+        <button type="button" class="btn btn-default" (click)="addNewStudent(); signUpForm.reset()">New Hero</button>
+        -->
+      </form>
+    </div>
+   
+    <!--
+    <div [hidden]="!submitted">
+      <h2>You submitted the following:</h2>
+      <div class="row">
+        <div class="col-xs-3">Name</div>
+        <div class="col-xs-9  pull-left">{{ model.name }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">Alter Ego</div>
+        <div class="col-xs-9 pull-left">{{ model.alterEgo }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">Power</div>
+        <div class="col-xs-9 pull-left">{{ model.power }}</div>
+      </div>
+      <br>
+      <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+    </div>
+    -->
+  </div>
+  

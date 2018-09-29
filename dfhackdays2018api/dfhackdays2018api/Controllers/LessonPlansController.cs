@@ -13,25 +13,24 @@ namespace dfhackdays2018api.Controllers
     [Route("api/[controller]")]
     public class LessonPlansController : Controller
     {
-        private readonly MongoDbContext _context;
-
-        public LessonPlansController(MongoDbContext mongoDbContext)
-        {
-            _context = mongoDbContext;
-        }
-
         // GET: api/values
         [HttpGet]
         public IEnumerable<LessonPlan> Get()
         {
-            return _context.LessonPlans.ToList();
+            using (MongoDbContext context = new MongoDbContext())
+            {
+                return context.LessonPlans.ToList();
+            }
         }
 
         // GET api/values/5
         [HttpGet("{lessonPlanId}")]
         public LessonPlan Get(string lessonPlanId)
         {
-            return _context.LessonPlans.SingleOrDefault(lp => lp.LessonPlanId == ObjectId.Parse(lessonPlanId));
+            using (MongoDbContext context = new MongoDbContext())
+            {
+                return context.LessonPlans.SingleOrDefault(lp => lp.LessonPlanId == ObjectId.Parse(lessonPlanId));
+            }
         }
 
         // POST api/values

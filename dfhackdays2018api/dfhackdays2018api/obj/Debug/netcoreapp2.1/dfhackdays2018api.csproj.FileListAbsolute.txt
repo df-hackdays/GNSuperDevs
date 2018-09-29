@@ -1,0 +1,14 @@
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/bin/Debug/netcoreapp2.1/dfhackdays2018api.deps.json
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/bin/Debug/netcoreapp2.1/dfhackdays2018api.runtimeconfig.json
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/bin/Debug/netcoreapp2.1/dfhackdays2018api.runtimeconfig.dev.json
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/bin/Debug/netcoreapp2.1/dfhackdays2018api.dll
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/bin/Debug/netcoreapp2.1/dfhackdays2018api.pdb
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/obj/Debug/netcoreapp2.1/dfhackdays2018api.csproj.CoreCompileInputs.cache
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/obj/Debug/netcoreapp2.1/dfhackdays2018api.RazorAssemblyInfo.cache
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/obj/Debug/netcoreapp2.1/dfhackdays2018api.RazorAssemblyInfo.cs
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/obj/Debug/netcoreapp2.1/dfhackdays2018api.AssemblyInfoInputs.cache
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/obj/Debug/netcoreapp2.1/dfhackdays2018api.AssemblyInfo.cs
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/obj/Debug/netcoreapp2.1/dfhackdays2018api.RazorTargetAssemblyInfo.cache
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/obj/Debug/netcoreapp2.1/dfhackdays2018api.dll
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/obj/Debug/netcoreapp2.1/dfhackdays2018api.pdb
+/Volumes/My Files/Documents/Coding Projects/dfhackdays2018/dfhackdays2018api/dfhackdays2018api/obj/Debug/netcoreapp2.1/dfhackdays2018api.csprojAssemblyReference.cache

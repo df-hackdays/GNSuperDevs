@@ -10,8 +10,8 @@ namespace dfhackdays2018.Models
         {
         }
 
-        [BsonId]
-        public ObjectId TagId { get; set; }
+        //[BsonId]
+        //public ObjectId TagId { get; set; }
         public string Name { get; set; }
     }
 }

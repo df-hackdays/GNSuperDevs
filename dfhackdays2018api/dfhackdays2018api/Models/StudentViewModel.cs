@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace dfhackdays2018.Models
 {
-    public class Student
+    public class StudentViewModel
     {
-        public Student()
+        public StudentViewModel()
         {
         }
 
         [BsonId]
-        public ObjectId StudentId { get; set; }
+        public string StudentId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public DateTime Birthday { get; set; }
         public string Gender { get; set; }
-        public ObjectId Profession { get; set; }
-        public List<ObjectId> Aspirations { get; set; }
+        public string Profession { get; set; }
+        public List<string> Aspirations { get; set; }
         public DateTime SignUpDate { get; set; }
     }
 }

@@ -13,25 +13,24 @@ namespace dfhackdays2018api.Controllers
     [Route("api/[controller]")]
     public class ProfessionsController : Controller
     {
-        private readonly MongoDbContext _context;
-
-        public ProfessionsController(MongoDbContext mongoDbContext)
-        {
-            _context = mongoDbContext;
-        }
-
         // GET: api/values
         [HttpGet]
         public IEnumerable<Profession> Get()
         {
-            return _context.Professions.ToList();
+            using (MongoDbContext context = new MongoDbContext())
+            {
+                return context.Professions.ToList();
+            }
         }
 
         // GET api/values/5
         [HttpGet("{professionId}")]
         public Profession Get(string professionId)
         {
-            return _context.Professions.SingleOrDefault(prof => prof.ProfessionId == ObjectId.Parse(professionId));
+            using (MongoDbContext context = new MongoDbContext())
+            {
+                return context.Professions.SingleOrDefault(prof => prof.ProfessionId == ObjectId.Parse(professionId));
+            }
         }
 
         // POST api/values

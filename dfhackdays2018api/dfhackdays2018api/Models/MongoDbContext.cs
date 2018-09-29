@@ -38,6 +38,7 @@ namespace dfhackdays2018.Models
             //optionsBuilder.UseMongoDb(settings);
 
             MongoClient mongoClient = new MongoClient(settings);
+            optionsBuilder.EnableSensitiveDataLogging(true);
             optionsBuilder.UseMongoDb(mongoClient);
         }
     }

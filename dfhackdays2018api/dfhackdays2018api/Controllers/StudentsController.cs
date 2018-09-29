@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using dfhackdays2018.Models;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
@@ -12,60 +13,102 @@ namespace dfhackdays2018.Controllers
     [ApiController]
     public class StudentsController : ControllerBase
     {
-        private readonly MongoDbContext _context;
-
-        public StudentsController(MongoDbContext mongoDbContext)
-        {
-            _context = mongoDbContext;
-        }
-
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<Student>> Get()
         {
-            return _context.Students.ToList();
+            using (MongoDbContext context = new MongoDbContext())
+            {
+                return context.Students.ToList();
+            }
         }
 
         // GET api/values/5
         [HttpGet("{studentId}")]
         public ActionResult<Student> Get(string studentId)
         {
-            return _context.Students.SingleOrDefault(stud => stud.StudentId == ObjectId.Parse(studentId));
+            using (MongoDbContext context = new MongoDbContext())
+            {
+                return context.Students.SingleOrDefault(stud => stud.StudentId == ObjectId.Parse(studentId));
+            }
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] Student newStudent)
+        public ActionResult<Student> Post([FromBody] StudentViewModel newStudentViewModel)
         {
-            if (!_context.Students.Any(stud => stud.Email == newStudent.Email))
+            using (MongoDbContext context = new MongoDbContext())
             {
-                _context.Students.Add(newStudent);
-                _context.SaveChanges();
+                if (!context.Students.Any(stud => stud.Email == newStudentViewModel.Email))
+                {
+                    Student newStudent = Map(newStudentViewModel);
+                    newStudent.Profession = ObjectId.Parse(newStudentViewModel.Profession);
+                    List<ObjectId> aspirations = new List<ObjectId>();
+                    newStudentViewModel.Aspirations.ForEach(a => aspirations.Add(ObjectId.Parse(a)));
+                    newStudent.Aspirations = aspirations;
+
+                    context.Students.Add(newStudent);
+                    context.SaveChanges();
+                }
             }
 
-            return;
+            using (MongoDbContext context = new MongoDbContext())
+            {
+                if (context.Students.Any(stud => stud.Email == newStudentViewModel.Email))
+                {
+                    return context.Students.SingleOrDefault(stud => stud.Email == newStudentViewModel.Email);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public IActionResult Put([FromQuery] ObjectId studentId, [FromBody] Student updatedStudent)
+        [HttpPut("{studentId}")]
+        public IActionResult Put([FromRoute] string studentId, [FromBody] StudentViewModel updatedStudentViewModel)
         {
-            if (!_context.Students.Any(stud => stud.StudentId == studentId))
+            using (MongoDbContext context = new MongoDbContext())
             {
-                return NotFound();
+                if (!context.Students.Any(stud => stud.StudentId == ObjectId.Parse(studentId)))
+                {
+                    return NotFound();
+                }
+
+                Student updatedStudent = Map(updatedStudentViewModel);
+                updatedStudent.StudentId = ObjectId.Parse(studentId);
+                updatedStudent.Profession = ObjectId.Parse(updatedStudentViewModel.Profession);
+                List<ObjectId> aspirations = new List<ObjectId>();
+                updatedStudentViewModel.Aspirations.ForEach(a => aspirations.Add(ObjectId.Parse(a)));
+                updatedStudent.Aspirations = aspirations;
+
+                context.Students.Update(updatedStudent);
+                context.SaveChanges();
+
+                return Ok();
             }
-
-            updatedStudent.StudentId = studentId;
-
-            _context.Students.Update(updatedStudent);
-
-            return Ok();
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        private Student Map(StudentViewModel asvm)
+        {
+            Student student = new Student()
+            {
+                FirstName = asvm.FirstName,
+                LastName = asvm.LastName,
+                Email = asvm.Email,
+                Gender = asvm.Gender,
+                Birthday = asvm.Birthday,
+                SignUpDate = asvm.SignUpDate
+            };
+
+            return student;
         }
     }
 }
